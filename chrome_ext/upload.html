@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>PDF Upload</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .file-upload {
+        display: block;
+        margin: 20px auto;
+      }
+
+      .file-upload input[type="file"] {
+        display: none;
+      }
+
+      .file-upload label {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      .file-upload label:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>PDF Upload</h1>
+    <div class="file-upload">
+      <input type="file" id="pdf-file" accept=".pdf" />
+      <label for="pdf-file">Upload PDF</label>
+    </div>
+
+    <script src="pdf.min.js"></script>
+    <script src="upload.js"></script>
+  </body>
+</html>
