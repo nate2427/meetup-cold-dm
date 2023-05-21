@@ -23,3 +23,22 @@ def get_links_from_pdf(filename='./chrome_ext/links.pdf'):
                 urls.append(url)
     # Return the list of URLs
     return urls
+
+
+def create_links_dict(filename='./chrome_ext/links.pdf'):
+    urls = get_links_from_pdf(filename)
+    links_dict_list = []
+    for url in urls:
+        # check if https in the URL
+        if 'https' not in url or '&' not in url:
+            continue
+        # Split the URL at the "&" character
+        url_parts = url.split('&')
+        # Extract the member_id and name from the URL
+        member_id = url_parts[1].split('=')[1]
+        name = url_parts[2].split('=')[1].replace('+', ' ')
+        # Create a dictionary with the member_id, name, and link values
+        links_dict = {'name': name, 'id': member_id, 'link': url}
+        # Append the dictionary to the list of links dictionaries
+        links_dict_list.append(links_dict)
+    return links_dict_list

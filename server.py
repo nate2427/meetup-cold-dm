@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from utils import get_links_from_pdf
+from utils import create_links_dict
 
 app = Flask(__name__)
 
@@ -11,8 +11,9 @@ def hello_world():
 
 @app.route('/get_links', methods=['POST'])
 def get_links():
+    """ returns a list of links with member_id, name and link """
     # filename = request.json['filename']
-    return jsonify(get_links_from_pdf())
+    return jsonify(create_links_dict())
 
 
 if __name__ == '__main__':
