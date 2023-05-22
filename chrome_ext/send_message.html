@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>PDF Upload</title>
+    <title>Meetup Mass Sender</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -37,13 +37,13 @@
     </style>
   </head>
   <body>
-    <h1>PDF Upload</h1>
-    <div class="file-upload">
-      <input type="file" id="pdf-file" accept=".pdf" />
-      <label for="pdf-file">Upload PDF</label>
+    <h1>Meetup Mass Sender</h1>
+    <div class="filename-upload">
+      <input type="text" placeholder="Filename" id="filename-upload" />
+      <button>Get Links</button>
     </div>
 
     <script src="pdf.min.js"></script>
-    <script src="upload.js"></script>
+    <script src="send_message.js"></script>
   </body>
 </html>

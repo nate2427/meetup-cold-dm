@@ -4,13 +4,12 @@
   "description": "Messages Meetup Group Members",
   "version": "1.0",
   "action": {
-    "default_popup": "upload.html",
+    "default_popup": "send_message.html",
     "default_icon": "streetcoderslogo.PNG"
   },
-  "content_scripts": [
-    {
-      "js": ["pdf.min.js"],
-      "matches": ["https://meetup.com/*"]
-    }
-  ]
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["https://meetup.com/*", "https://secure.meetup.com/*"]
 }
